@@ -1,0 +1,38 @@
+VIDEO SAVER (Android) - baixa vídeos de qualquer site só com o link
+Este ZIP é o PROJETO do app (código-fonte). O arquivo .apk é gerado pelo Android Studio, passo a passo abaixo.
+
+1) PREPARAR
+   - Instale o Android Studio (gratuito): https://developer.android.com/studio
+   - Extraia este ZIP em uma pasta.
+
+2) ABRIR E COMPILAR
+   - Android Studio > File > Open > escolha a pasta "VideoSaverAndroid".
+   - Espere o "Gradle sync" terminar (baixa as dependências; na primeira vez demora alguns minutos).
+   - Menu Build > Build Bundle(s) / APK(s) > Build APK(s).
+   - Quando terminar, clique em "locate" no aviso. O arquivo fica em:
+     app\build\outputs\apk\debug\app-debug.apk
+
+3) INSTALAR NO CELULAR
+   - Copie o app-debug.apk para o celular (cabo, Drive, WhatsApp...), abra e permita
+     "instalar apps desconhecidos" quando o Android pedir.
+   - Ou conecte o celular com a Depuração USB ligada e clique no botão verde "Run" do Android Studio.
+   - Requer Android 10 ou mais novo.
+
+4) COMO USAR
+   - Abra o app, cole o link e toque em Baixar.
+   - Ou, em qualquer app (navegador, Reddit, Instagram...), toque em Compartilhar > Video Saver.
+   - Qualidade: melhor, 1080p, 720p, 480p ou só áudio (MP3). Pode escolher a pasta de destino.
+   - O progresso aparece numa notificação com ícone vermelho e o download continua com o app fechado.
+   - Sem pasta escolhida, os vídeos vão para Downloads/Video Saver.
+   - Se um site parar de funcionar, toque em "Atualizar yt-dlp".
+
+SE DER ERRO NO GRADLE SYNC
+   - "Could not resolve ...youtubedl-android...": abra github.com/JunkFood02/youtubedl-android,
+     veja a versão mais recente e troque o número 0.17.2 em app/build.gradle.kts (nas duas linhas).
+   - Aceite as atualizações que o Android Studio sugerir (SDK Platform 35, versão do Gradle).
+   - Se aparecer erro em algum arquivo .kt, me mande a mensagem completa que eu corrijo.
+
+AVISOS
+   - O app fica grande (cerca de 60 a 100 MB) porque leva o yt-dlp e o ffmpeg dentro.
+   - Não baixa conteúdo com DRM (Netflix, Disney+ etc.).
+   - Baixe só conteúdo que você tem permissão de usar.

@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="modes">
+        <item>Melhor qualidade</item>
+        <item>Até 1080p</item>
+        <item>Até 720p</item>
+        <item>Até 480p</item>
+        <item>Só áudio (MP3)</item>
+    </string-array>
+</resources>
