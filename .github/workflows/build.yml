@@ -16,8 +16,6 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - uses: android-actions/setup-android@v3
-
       - name: Permissão do gradlew
         run: chmod +x gradlew
 
