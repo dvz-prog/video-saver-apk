@@ -16,13 +16,20 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Permissão do gradlew
-        run: chmod +x gradlew
-
       - name: Compilar APK debug
-        run: ./gradlew assembleDebug --stacktrace
+        run: |
+          GW=$(find . -name gradlew -not -path './.git/*' | head -n 1)
+          if [ -n "$GW" ]; then
+            cd "$(dirname "$GW")"
+            chmod +x gradlew
+            ./gradlew assembleDebug --stacktrace
+          else
+            S=$(find . -name 'settings.gradle*' -not -path './.git/*' | head -n 1)
+            cd "$(dirname "$S")"
+            gradle assembleDebug --stacktrace
+          fi
 
       - uses: actions/upload-artifact@v4
         with:
           name: video-saver-debug
-          path: app/build/outputs/apk/debug/*.apk
+          path: "**/build/outputs/apk/debug/*.apk"
